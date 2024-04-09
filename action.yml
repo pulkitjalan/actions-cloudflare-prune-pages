@@ -11,6 +11,10 @@ inputs:
   project_name:
     description: 'Project name'
     required: true
+  environment:
+    description: 'Project name'
+    required: false
+    default: 'preview'
   keep:
     description: 'Number of deployments to keep'
     required: false
@@ -24,4 +28,5 @@ runs:
   args:
     - '--account=${{ inputs.account_id }}'
     - '--project=${{ inputs.project_name }}'
+    - '--environment=${{ inputs.environment }}'
     - '--keep=${{ inputs.keep }}'
