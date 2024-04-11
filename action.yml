@@ -6,16 +6,16 @@ branding:
 
 inputs:
   apiToken:
-    description: 'CloudFlare API token'
+    description: 'CloudFlare api token'
     required: true
   accountId:
-    description: 'CloudFlare account ID'
+    description: 'CloudFlare account id'
     required: true
   projectName:
     description: 'Project name'
     required: true
   environment:
-    description: 'Project name'
+    description: 'Environment to prune'
     required: false
     default: 'preview'
   keep:

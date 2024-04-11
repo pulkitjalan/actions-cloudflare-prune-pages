@@ -1,7 +1,7 @@
 import argparse
 import CloudFlare
 
-parser = argparse.ArgumentParser(description='Purge Cloudflare Pages cache')
+parser = argparse.ArgumentParser(description='Purge CloudFlare Pages cache')
 parser.add_argument('--accountId', required=True, help='Account ID')
 parser.add_argument('--projectName', required=True, help='Pages project name to purge')
 parser.add_argument('--environment', default='preview', choices=['production', 'preview'], help='The environment to purge')
