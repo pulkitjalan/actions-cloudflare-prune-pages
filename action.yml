@@ -1,14 +1,17 @@
-name: prune
-description: Prune CloudFlare pages deployments
+name: CloudFlare Prune Pages
+description: This action will prune old CloudFlare Pages deployment.
+branding:
+  icon: cloud-off
+  color: orange
 
 inputs:
-  token:
+  apiToken:
     description: 'CloudFlare API token'
     required: true
-  account_id:
+  accountId:
     description: 'CloudFlare account ID'
     required: true
-  project_name:
+  projectName:
     description: 'Project name'
     required: true
   environment:
@@ -24,9 +27,9 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    CLOUDFLARE_API_TOKEN: ${{ inputs.token }}
+    CLOUDFLARE_API_TOKEN: ${{ inputs.apiToken }}
   args:
-    - '--account=${{ inputs.account_id }}'
-    - '--project=${{ inputs.project_name }}'
+    - '--accountId=${{ inputs.accountId }}'
+    - '--projectName=${{ inputs.projectName }}'
     - '--environment=${{ inputs.environment }}'
     - '--keep=${{ inputs.keep }}'
