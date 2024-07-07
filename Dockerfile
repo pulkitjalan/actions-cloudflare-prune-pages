@@ -1,7 +1,8 @@
 FROM python:3-alpine
 
-COPY main.py /main.py
+COPY --link main.py /main.py
+COPY --link requirements.txt /requirements.txt
 
-RUN pip install cloudflare
+RUN pip install -r /requirements.txt
 
 ENTRYPOINT ["python", "/main.py"]
